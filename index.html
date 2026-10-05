@@ -15,58 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 
     <style>
-        /* Dark Theme Variables Override */
-        [data-theme="dark"] {
-            --primary-dark: #020617;
-            --primary-accent: #3b82f6;
-            --bg-main: #0f172a;
-            --card-bg: #1e293b;
-            --text-dark: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-light: #334155;
-            
-            --success-color: #34d399;
-            --success-bg: rgba(5, 150, 105, 0.22);
-            --success-border: rgba(52, 211, 153, 0.35);
-            
-            --danger-color: #fb7185;
-            --danger-bg: rgba(225, 29, 72, 0.22);
-            --danger-border: rgba(251, 113, 133, 0.35);
-            
-            --info-color: #38bdf8;
-            --info-bg: rgba(2, 132, 199, 0.22);
-            
-            --neutral-bg: #334155;
-            --neutral-text: #cbd5e1;
-        }
-
-        /* Default System Theme (if data-theme is 'auto') */
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]):not([data-theme="dark"]) {
-                --primary-dark: #020617;
-                --primary-accent: #3b82f6;
-                --bg-main: #0f172a;
-                --card-bg: #1e293b;
-                --text-dark: #f8fafc;
-                --text-muted: #94a3b8;
-                --border-light: #334155;
-                
-                --success-color: #34d399;
-                --success-bg: rgba(5, 150, 105, 0.22);
-                --success-border: rgba(52, 211, 153, 0.35);
-                
-                --danger-color: #fb7185;
-                --danger-bg: rgba(225, 29, 72, 0.22);
-                --danger-border: rgba(251, 113, 133, 0.35);
-                
-                --info-color: #38bdf8;
-                --info-bg: rgba(2, 132, 199, 0.22);
-                
-                --neutral-bg: #334155;
-                --neutral-text: #cbd5e1;
-            }
-        }
-
+        /* 1. Light Mode Variables (Default Root) */
         :root {
             --primary-dark: #0f172a;
             --primary-accent: #2563eb;
@@ -89,6 +38,65 @@
             
             --neutral-bg: #f1f5f9;
             --neutral-text: #475569;
+            --badge-bg: #ffffff;
+            --badge-text: #0f172a;
+        }
+
+        /* 2. Dark Mode Variables (Explicitly Selected) */
+        :root[data-theme="dark"],
+        [data-theme="dark"] {
+            --primary-dark: #020617;
+            --primary-accent: #3b82f6;
+            --bg-main: #0f172a;
+            --card-bg: #1e293b;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-light: #334155;
+            
+            --success-color: #34d399;
+            --success-bg: rgba(5, 150, 105, 0.22);
+            --success-border: rgba(52, 211, 153, 0.35);
+            
+            --danger-color: #fb7185;
+            --danger-bg: rgba(225, 29, 72, 0.22);
+            --danger-border: rgba(251, 113, 133, 0.35);
+            
+            --info-color: #38bdf8;
+            --info-bg: rgba(2, 132, 199, 0.22);
+            
+            --neutral-bg: #334155;
+            --neutral-text: #cbd5e1;
+            --badge-bg: #334155;
+            --badge-text: #f8fafc;
+        }
+
+        /* 3. System Theme Sync (if data-theme is 'auto' or not explicitly overridden) */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --primary-dark: #020617;
+                --primary-accent: #3b82f6;
+                --bg-main: #0f172a;
+                --card-bg: #1e293b;
+                --text-dark: #f8fafc;
+                --text-muted: #94a3b8;
+                --border-light: #334155;
+                
+                --success-color: #34d399;
+                --success-bg: rgba(5, 150, 105, 0.22);
+                --success-border: rgba(52, 211, 153, 0.35);
+                
+                --danger-color: #fb7185;
+                --danger-bg: rgba(225, 29, 72, 0.22);
+                --danger-border: rgba(251, 113, 133, 0.35);
+                
+                --info-color: #38bdf8;
+                --info-bg: rgba(2, 132, 199, 0.22);
+                
+                --neutral-bg: #334155;
+                --neutral-text: #cbd5e1;
+                --badge-bg: #334155;
+                --badge-text: #f8fafc;
+            }
         }
 
         * {
@@ -283,7 +291,7 @@
             left: 14px;
             top: 50%;
             transform: translateY(-50%);
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 15px;
         }
 
@@ -385,8 +393,8 @@
         }
 
         .section-badge {
-            background: var(--card-bg);
-            color: var(--text-dark);
+            background: var(--badge-bg);
+            color: var(--badge-text);
             padding: 3px 12px;
             border-radius: 20px;
             font-size: 12px;
@@ -453,8 +461,8 @@
         .pill-success { background: var(--success-bg); color: var(--success-color); border: 1px solid var(--success-border); }
         .pill-danger { background: var(--danger-bg); color: var(--danger-color); border: 1px solid var(--danger-border); }
         .pill-info { background: var(--info-bg); color: var(--info-color); }
-        .pill-neutral { background: var(--neutral-bg); color: var(--text-muted); font-weight: 500; }
-        .pill-empty { color: var(--text-muted); opacity: 0.5; }
+        .pill-neutral { background: var(--neutral-bg); color: var(--neutral-text); font-weight: 500; border: 1px solid var(--border-light); }
+        .pill-empty { color: var(--text-muted); opacity: 0.6; }
 
         footer {
             margin-top: 36px;
@@ -493,17 +501,17 @@
             </div>
             <div class="stat-card green">
                 <div class="stat-label">Sudah Mengisi Semua</div>
-                <div class="stat-value" style="color: #059669;" id="statLengkap">0</div>
+                <div class="stat-value" style="color: var(--success-color);" id="statLengkap">0</div>
                 <div class="stat-desc">Sudah Lengkap / Sudah Terima</div>
             </div>
             <div class="stat-card red">
                 <div class="stat-label">Mengisi Beberapa Saja</div>
-                <div class="stat-value" style="color: #e11d48;" id="statBelum">0</div>
+                <div class="stat-value" style="color: var(--danger-color);" id="statBelum">0</div>
                 <div class="stat-desc">Status Masih Belum Lengkap</div>
             </div>
             <div class="stat-card gray">
                 <div class="stat-label">Belum Mengisi Semua</div>
-                <div class="stat-value" style="color: #64748b;" id="statEmpty">0</div>
+                <div class="stat-value" style="color: var(--text-muted);" id="statEmpty">0</div>
                 <div class="stat-desc">Belum Ada Data / Dalam Proses</div>
             </div>
         </div>
@@ -762,7 +770,7 @@
             tbody.innerHTML = '';
 
             if (list.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:#94a3b8; padding:20px;">Tidak ada data toko dalam list ini</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:var(--text-muted); padding:20px;">Tidak ada data toko dalam list ini</td></tr>`;
                 return;
             }
 
@@ -825,7 +833,7 @@
             }
 
             let sheetData = [];
-            sheetData.push(['LAPORAN KELENGKAPAN TOKO NPI 2026 (39 TOKO TARGET)']);
+            sheetData.push(['LAPORAN KELENGKAPAN TOKO NPI 2026 (39 TOKO AREA TIMUR)']);
             sheetData.push(['Tanggal Cetak:', new Date().toLocaleString('id-ID')]);
             sheetData.push([]);
             sheetData.push(['RINGKASAN STATUS PENGISIAN']);
