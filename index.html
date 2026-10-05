@@ -8,9 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- External Libraries for Export -->
-    <!-- SheetJS / XLSX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <!-- jsPDF & AutoTable -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 
@@ -25,10 +23,8 @@
             --primary-hover: #1d4ed8;
             --success-bg: #dcfce7;
             --success-text: #166534;
-            --success-border: #86efac;
             --warning-bg: #fee2e2;
             --warning-text: #991b1b;
-            --warning-border: #fca5a5;
             --neutral-bg: #f1f5f9;
             --neutral-text: #475569;
             --info-bg: #e0f2fe;
@@ -54,7 +50,6 @@
             margin: 0 auto;
         }
 
-        /* Header Styling */
         header {
             margin-bottom: 24px;
             display: flex;
@@ -116,7 +111,6 @@
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
-        /* KPI Grid */
         .kpi-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -159,7 +153,6 @@
             margin-top: 2px;
         }
 
-        /* Controls & Export Toolbar */
         .toolbar-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -225,43 +218,16 @@
             text-decoration: none;
         }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
+        .btn-primary { background-color: var(--primary-color); color: white; }
+        .btn-primary:hover { background-color: var(--primary-hover); }
+        .btn-excel { background-color: #16a34a; color: white; }
+        .btn-excel:hover { background-color: #15803d; }
+        .btn-pdf { background-color: #dc2626; color: white; }
+        .btn-pdf:hover { background-color: #b91c1c; }
+        .btn-outline { background-color: white; border-color: var(--border-color); color: var(--text-primary); }
+        .btn-outline:hover { background-color: #f1f5f9; }
 
-        .btn-excel {
-            background-color: #16a34a;
-            color: white;
-        }
-        .btn-excel:hover {
-            background-color: #15803d;
-        }
-
-        .btn-pdf {
-            background-color: #dc2626;
-            color: white;
-        }
-        .btn-pdf:hover {
-            background-color: #b91c1c;
-        }
-
-        .btn-outline {
-            background-color: white;
-            border-color: var(--border-color);
-            color: var(--text-primary);
-        }
-        .btn-outline:hover {
-            background-color: #f1f5f9;
-        }
-
-        /* Group Sections */
-        .group-section {
-            margin-bottom: 32px;
-        }
+        .group-section { margin-bottom: 32px; }
 
         .group-header {
             display: flex;
@@ -272,31 +238,11 @@
             border-radius: 10px;
         }
 
-        .group-header-success {
-            background-color: var(--success-bg);
-            border-left: 4px solid #16a34a;
-            color: var(--success-text);
-        }
+        .group-header-success { background-color: var(--success-bg); border-left: 4px solid #16a34a; color: var(--success-text); }
+        .group-header-danger { background-color: var(--warning-bg); border-left: 4px solid #dc2626; color: var(--warning-text); }
+        .group-header-neutral { background-color: var(--neutral-bg); border-left: 4px solid #64748b; color: var(--neutral-text); }
 
-        .group-header-danger {
-            background-color: var(--warning-bg);
-            border-left: 4px solid #dc2626;
-            color: var(--warning-text);
-        }
-
-        .group-header-neutral {
-            background-color: var(--neutral-bg);
-            border-left: 4px solid #64748b;
-            color: var(--neutral-text);
-        }
-
-        .group-title {
-            font-size: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .group-title { font-size: 15px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
 
         .count-badge {
             font-size: 12px;
@@ -306,7 +252,6 @@
             font-weight: 600;
         }
 
-        /* Table Styling */
         .table-container {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -340,11 +285,8 @@
             color: var(--text-primary);
         }
 
-        tbody tr:hover {
-            background-color: #f8fafc;
-        }
+        tbody tr:hover { background-color: #f8fafc; }
 
-        /* Status Badges */
         .badge {
             display: inline-block;
             padding: 3px 8px;
@@ -371,15 +313,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <header>
             <div class="title-group">
                 <h1>Dashboard Monitoring Kelengkapan Toko</h1>
-                <p>Status Kelengkapan NPI 2026 - Grouped Summary & Export Report</p>
+                <p>Status Kelengkapan NPI 2026 - Realtime Web App Sync</p>
             </div>
             <div class="header-actions">
-                <a href="https://script.google.com/macros/s/AKfycbwe_LzwcQQkdYFMntfeCvPS8t4wzitrgmP-2SpzRbeGU_c6POogIarX7cFIhQfdPsu5kg/exec" 
-                   target="_blank" class="btn btn-outline" title="Buka Google Apps Script Web App">
+                <a href="https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec" target="_blank" class="btn btn-outline">
                    🔗 Buka Web App
                 </a>
                 <div class="live-status">
@@ -389,7 +329,7 @@
             </div>
         </header>
 
-        <!-- KPI Cards -->
+        <!-- KPI Grid -->
         <div class="kpi-grid">
             <div class="kpi-card" style="border-left: 4px solid #2563eb;">
                 <div class="kpi-title">Total Toko Dicek</div>
@@ -420,13 +360,13 @@
                 <input type="text" id="searchInput" placeholder="Cari nama toko..." onkeyup="filterTables()">
             </div>
             <div class="btn-group">
-                <button class="btn btn-outline" onclick="loadDataFromSheets()" title="Refresh data dari Google Sheets">
+                <button class="btn btn-outline" onclick="loadDataFromWebApp()">
                     🔄 Refresh
                 </button>
-                <button class="btn btn-excel" onclick="exportToExcel()" title="Export Summary ke file Excel (.xlsx)">
+                <button class="btn btn-excel" onclick="exportToExcel()">
                     📊 Export XLSX
                 </button>
-                <button class="btn btn-pdf" onclick="exportToPDF()" title="Export Summary ke PDF">
+                <button class="btn btn-pdf" onclick="exportToPDF()">
                     📄 Export PDF
                 </button>
             </div>
@@ -494,7 +434,7 @@
             </div>
         </div>
 
-        <!-- Group 3: Toko Belum Ada Data / Proses -->
+        <!-- Group 3: Toko Belum Ada Data / Dalam Proses -->
         <div class="group-section" id="sectionNeutral">
             <div class="group-header group-header-neutral">
                 <div class="group-title">
@@ -526,588 +466,14 @@
         </div>
 
         <footer>
-            Dashboard Realtime Kelengkapan NPI 2026 &bull; Terhubung dengan Google Sheets & Web App
+            Dashboard Realtime Kelengkapan NPI 2026 &bull; Terhubung dengan Google Sheets via Web App
         </footer>
     </div>
 
     <script>
-        // Data toko awal (Pre-loaded Snapshot)
-        let allStores = [
-            {
-                        "no": "1",
-                        "nama": "M116 Digimap Beachwalk Bali",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "2",
-                        "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya",
-                        "iphone1": "",
-                        "iphoneAcrylic": "",
-                        "iphoneRiser": "",
-                        "watch1": "",
-                        "watch2": "",
-                        "macAdhesive": "",
-                        "appApr": "Sudah lengkap",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "Sudah Lengkap"
-            },
-            {
-                        "no": "3",
-                        "nama": "M122 Digimap Galaxy Mall Surabaya",
-                        "iphone1": "Sudah lengkap",
-                        "iphoneAcrylic": "BELUM",
-                        "iphoneRiser": "BELUM",
-                        "watch1": "Sudah Lengkap",
-                        "watch2": "Sudah Lengkap",
-                        "macAdhesive": "Sudah Lengkap",
-                        "appApr": "SUDAH LENGKAP",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "Belum Lengkap"
-            },
-            {
-                        "no": "4",
-                        "nama": "M123 Digimap Mall Bali Galeria",
-                        "iphone1": "Sudah lengkap",
-                        "iphoneAcrylic": "BELUM",
-                        "iphoneRiser": "BELUM",
-                        "watch1": "Sudah Lengkap",
-                        "watch2": "Sudah Lengkap",
-                        "macAdhesive": "Sudah Lengkap",
-                        "appApr": "SUDAH LENGKAP",
-                        "aarMbaar1": "",
-                        "aar2": "1",
-                        "summary": "Belum Lengkap"
-            },
-            {
-                        "no": "5",
-                        "nama": "M126 Digimap Ciputra World Surabaya",
-                        "iphone1": "Sudah Lengkap",
-                        "iphoneAcrylic": "BELUM",
-                        "iphoneRiser": "BELUM",
-                        "watch1": "Sudah Lengkap",
-                        "watch2": "",
-                        "macAdhesive": "",
-                        "appApr": "SUDAH LENGKAP",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "Belum Lengkap"
-            },
-            {
-                        "no": "6",
-                        "nama": "M130 Digimap Sunset Road Bali",
-                        "iphone1": "Sudah Lengkap",
-                        "iphoneAcrylic": "SUDAH LENGKAP",
-                        "iphoneRiser": "",
-                        "watch1": "SUDAH LENGKAP",
-                        "watch2": "SUDAH LENGKAP",
-                        "macAdhesive": "",
-                        "appApr": "Sudah lengkap",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "Sudah Lengkap"
-            },
-            {
-                        "no": "7",
-                        "nama": "M206 Digimap Pakuwon Mall Surabaya",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "8",
-                        "nama": "M216 Digimap Tentrem Mall Semarang",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "9",
-                        "nama": "M220 Digimap Malioboro Mall",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "10",
-                        "nama": "M223 Digimap Roxy Square Jember",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "Sudah Terima",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "11",
-                        "nama": "M226 Digimap Ambon City Center",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "12",
-                        "nama": "M229 Digimap Trans Icon Surabaya",
-                        "iphone1": "",
-                        "iphoneAcrylic": "",
-                        "iphoneRiser": "",
-                        "watch1": "",
-                        "watch2": "",
-                        "macAdhesive": "",
-                        "appApr": "",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "13",
-                        "nama": "M230 Digimap The Park Kendari",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "14",
-                        "nama": "M231 Digimap Gress Mall Gresik",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "15",
-                        "nama": "M232 Digimap Pakuwon Mall Solo",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "16",
-                        "nama": "M233 Digimap Unimas District Sidoarjo",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "Sudah Lengkap",
-                        "aar2": "-",
-                        "summary": "Sudah Lengkap"
-            },
-            {
-                        "no": "17",
-                        "nama": "M236 Digimap Palu Grand Mall",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "18",
-                        "nama": "M237 Digimap Solo Square",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "19",
-                        "nama": "M239 Digimap Icon Mall Bali",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "20",
-                        "nama": "M244 Digimap Java Mall Semarang",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "21",
-                        "nama": "M246 Digimap Malang Town Square",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "Sudah Terima",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "22",
-                        "nama": "M248 Digimap Suncity Mall Sidoarjo",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "23",
-                        "nama": "M250 Digimap Lippo Plaza Batu",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "24",
-                        "nama": "M253 Digimap Plaza Surabaya",
-                        "iphone1": "Sudah Lengkap",
-                        "iphoneAcrylic": "",
-                        "iphoneRiser": "",
-                        "watch1": "",
-                        "watch2": "",
-                        "macAdhesive": "",
-                        "appApr": "Sudah lengkap",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "Sudah Lengkap"
-            },
-            {
-                        "no": "25",
-                        "nama": "M258 Digimap Lippo Plaza Manado",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "26",
-                        "nama": "M260 Digimap Kudus Extention Mall",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "27",
-                        "nama": "M265 Digimap Merr Street",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "28",
-                        "nama": "M268 Digimap Diana Mall Timika",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "29",
-                        "nama": "M277 Digimap Citimall Tuban",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "30",
-                        "nama": "M281 Digimap Ngaliyan Street",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "31",
-                        "nama": "M283 Digimap Basuki Rahmat Tulungagung",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "32",
-                        "nama": "M285 Digimap Blitar Square",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "33",
-                        "nama": "M240 Digimap Pacific Mall Tegal",
-                        "iphone1": "",
-                        "iphoneAcrylic": "SUDAH LENGKAP",
-                        "iphoneRiser": "sudah lengkap",
-                        "watch1": "Sudah Lengkap",
-                        "watch2": "SUDAH LENGKAP",
-                        "macAdhesive": "sudah lengkap",
-                        "appApr": "Sudah lengkap",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "Sudah Lengkap"
-            },
-            {
-                        "no": "34",
-                        "nama": "M278 Digimap A.S.S Brebes",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "35",
-                        "nama": "M288 Digimap Mojopahit Street Mojokerto",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "36",
-                        "nama": "M289 Digimap Maleo Town Square",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "37",
-                        "nama": "M268 Digimap Diana Mall Timika",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "38",
-                        "nama": "M281 Digimap Ngaliyan Street",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "39",
-                        "nama": "M293 Digimap Jend Sudirman Salatiga",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "-",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "40",
-                        "nama": "M294 Digimap Bojonegoro Street",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "sudah terima",
-                        "aar2": "-",
-                        "summary": "-"
-            },
-            {
-                        "no": "41",
-                        "nama": "M297 Digimap Ponorogo City Center",
-                        "iphone1": "-",
-                        "iphoneAcrylic": "-",
-                        "iphoneRiser": "-",
-                        "watch1": "-",
-                        "watch2": "-",
-                        "macAdhesive": "-",
-                        "appApr": "-",
-                        "aarMbaar1": "Sudah Terima",
-                        "aar2": "-",
-                        "summary": "-"
-            }
-];
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec";
+
+        let allStores = [{"no": "1", "nama": "M116 Digimap Beachwalk Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "2", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "3", "nama": "M122 Digimap Galaxy Mall Surabaya", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "-", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "4", "nama": "M123 Digimap Mall Bali Galeria", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "1", "summary": "Belum Lengkap"}, {"no": "5", "nama": "M126 Digimap Ciputra World Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "", "macAdhesive": "", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "6", "nama": "M130 Digimap Sunset Road Bali", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "", "watch1": "SUDAH LENGKAP", "watch2": "SUDAH LENGKAP", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "7", "nama": "M206 Digimap Pakuwon Mall Surabaya", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "8", "nama": "M216 Digimap Tentrem Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "9", "nama": "M220 Digimap Malioboro Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "10", "nama": "M223 Digimap Roxy Square Jember", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "11", "nama": "M226 Digimap Ambon City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "12", "nama": "M229 Digimap Trans Icon Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "13", "nama": "M230 Digimap The Park Kendari", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "14", "nama": "M231 Digimap Gress Mall Gresik", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "15", "nama": "M232 Digimap Pakuwon Mall Solo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "16", "nama": "M233 Digimap Unimas District Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Lengkap", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "17", "nama": "M236 Digimap Palu Grand Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "18", "nama": "M237 Digimap Solo Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "19", "nama": "M239 Digimap Icon Mall Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "20", "nama": "M244 Digimap Java Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "21", "nama": "M246 Digimap Malang Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "22", "nama": "M248 Digimap Suncity Mall Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "23", "nama": "M250 Digimap Lippo Plaza Batu", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "24", "nama": "M253 Digimap Plaza Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "25", "nama": "M258 Digimap Lippo Plaza Manado", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "26", "nama": "M260 Digimap Kudus Extention Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "27", "nama": "M265 Digimap Merr Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "28", "nama": "M268 Digimap Diana Mall Timika", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "29", "nama": "M277 Digimap Citimall Tuban", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "30", "nama": "M281 Digimap Ngaliyan Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "31", "nama": "M283 Digimap Basuki Rahmat Tulungagung", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "32", "nama": "M285 Digimap Blitar Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "33", "nama": "M240 Digimap Pacific Mall Tegal", "iphone1": "", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "sudah lengkap", "watch1": "Sudah Lengkap", "watch2": "SUDAH LENGKAP", "macAdhesive": "sudah lengkap", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "34", "nama": "M278 Digimap A.S.S Brebes", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "35", "nama": "M288 Digimap Mojopahit Street Mojokerto", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "36", "nama": "M289 Digimap Maleo Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "37", "nama": "M268 Digimap Diana Mall Timika", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "38", "nama": "M281 Digimap Ngaliyan Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "39", "nama": "M293 Digimap Jend Sudirman Salatiga", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "40", "nama": "M294 Digimap Bojonegoro Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "sudah terima", "aar2": "-", "summary": "-"}, {"no": "41", "nama": "M297 Digimap Ponorogo City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}];
 
         function getBadgeHtml(val) {
             if (!val || val.trim() === '') return '<span class="badge badge-empty">-</span>';
@@ -1149,19 +515,16 @@
         function renderGroupedTables() {
             let { success, danger, neutral } = categorizeStores(allStores);
 
-            // Update KPI
             document.getElementById('kpiTotal').textContent = allStores.length;
             document.getElementById('kpiLengkap').textContent = success.length;
             document.getElementById('kpiBelum').textContent = danger.length;
             let percent = allStores.length > 0 ? ((success.length / allStores.length) * 100).toFixed(2) + '%' : '0%';
             document.getElementById('kpiPercent').textContent = percent;
 
-            // Update Section Counters
             document.getElementById('countSuccess').textContent = success.length + ' Toko';
             document.getElementById('countDanger').textContent = danger.length + ' Toko';
             document.getElementById('countNeutral').textContent = neutral.length + ' Toko';
 
-            // Populate Tables
             fillTable('tbodySuccess', success);
             fillTable('tbodyDanger', danger);
             fillTable('tbodyNeutral', neutral);
@@ -1215,10 +578,8 @@
             });
         }
 
-        // --- EXPORT TO EXCEL ---
         function exportToExcel() {
             let { success, danger, neutral } = categorizeStores(allStores);
-
             let wb = XLSX.utils.book_new();
 
             function buildRows(title, list) {
@@ -1233,7 +594,7 @@
                         s.aarMbaar1 || '-', s.aar2 || '-', s.summary || '-'
                     ]);
                 });
-                rows.push([]); // empty line spacer
+                rows.push([]);
                 return rows;
             }
 
@@ -1251,8 +612,6 @@
             sheetData = sheetData.concat(buildRows('KELOMPOK 3: TOKO BELUM ADA DATA / DALAM PROSES (' + neutral.length + ' Toko)', neutral));
 
             let ws = XLSX.utils.aoa_to_sheet(sheetData);
-            
-            // Set column widths
             ws['!cols'] = [
                 { wch: 6 }, { wch: 40 }, { wch: 15 }, { wch: 18 }, { wch: 18 },
                 { wch: 16 }, { wch: 16 }, { wch: 15 }, { wch: 15 }, { wch: 18 },
@@ -1263,14 +622,11 @@
             XLSX.writeFile(wb, "Dashboard_Kelengkapan_NPI_2026.xlsx");
         }
 
-        // --- EXPORT TO PDF ---
         function exportToPDF() {
             const { jsPDF } = window.jspdf;
             let doc = new jsPDF('landscape', 'mm', 'a4');
-
             let { success, danger, neutral } = categorizeStores(allStores);
 
-            // Title
             doc.setFontSize(16);
             doc.setFont('helvetica', 'bold');
             doc.setTextColor(15, 23, 42);
@@ -1281,7 +637,6 @@
             doc.setTextColor(100, 116, 139);
             doc.text("Tanggal Cetak: " + new Date().toLocaleString('id-ID'), 14, 22);
 
-            // KPI Box Summary Table
             doc.autoTable({
                 startY: 26,
                 head: [['Total Toko Dicek', 'Sudah Lengkap', 'Belum Lengkap', '% Kelengkapan']],
@@ -1293,7 +648,6 @@
             });
 
             let currentY = doc.lastAutoTable.finalY + 8;
-
             const cols = ['No', 'Nama Toko', 'iPhone(1)', 'iPhone(Acr)', 'iPhone(Ris)', 'Watch(1)', 'Watch(2)', 'Mac Adh', 'APP/APR', 'AAR(1)', 'AAR(2)', 'Summary'];
 
             function addGroupTable(title, list, headColor) {
@@ -1316,11 +670,7 @@
                     theme: 'striped',
                     headStyles: { fillColor: headColor, textColor: 255, fontSize: 8, fontStyle: 'bold' },
                     styles: { fontSize: 7.5, cellPadding: 2 },
-                    columnStyles: {
-                        0: { cellWidth: 10 },
-                        1: { cellWidth: 65 },
-                        11: { fontStyle: 'bold' }
-                    },
+                    columnStyles: { 0: { cellWidth: 10 }, 1: { cellWidth: 65 }, 11: { fontStyle: 'bold' } },
                     margin: { left: 14, right: 14 }
                 });
 
@@ -1331,7 +681,6 @@
             addGroupTable(`Kelompok 2: Toko Belum Lengkap (${danger.length} Toko)`, danger, [220, 38, 38]);
             addGroupTable(`Kelompok 3: Toko Belum Ada Data / Dalam Proses (${neutral.length} Toko)`, neutral, [71, 85, 105]);
 
-            // Page Numbering
             let pageCount = doc.internal.getNumberOfPages();
             for (let i = 1; i <= pageCount; i++) {
                 doc.setPage(i);
@@ -1343,67 +692,38 @@
             doc.save("Dashboard_Kelengkapan_NPI_2026.pdf");
         }
 
-        // --- FETCH LIVE DATA FROM GOOGLE SHEETS GVIZ ---
-        function loadDataFromSheets() {
-            document.getElementById('lastUpdatedText').textContent = 'Memperbarui...';
+        function loadDataFromWebApp() {
+            document.getElementById('lastUpdatedText').textContent = 'Syncing...';
             
-            const gvizUrl = "https://docs.google.com/spreadsheets/d/1S-O287Lm5ODO6vvfbLLAbXgUPjWlwdc_CPG2z2UEUB0/gviz/tq?tqx=out:json&sheet=Dashboard";
-
-            fetch(gvizUrl)
-                .then(response => response.text())
+            fetch(WEB_APP_URL + '?action=getData')
+                .then(response => response.json())
                 .then(data => {
-                    // gviz returns string starting with /*O_o*/ 
- google.visualization.Query.setResponse({...});
-                    let jsonString = data.substring(data.indexOf("{"), data.lastIndexOf("}") + 1);
-                    let json = JSON.parse(jsonString);
-                    let table = json.table;
-
-                    let rows = table.rows;
-                    let fetchedStores = [];
-
-                    // Skip header rows (rows 0-2 contain KPI and Header)
-                    for (let i = 3; i < rows.length; i++) {
-                        let rowCells = rows[i].c;
-                        if (!rowCells || !rowCells[1] || !rowCells[1].v) continue;
-
-                        function getCellVal(idx) {
-                            if (!rowCells[idx] || rowCells[idx].v === null || rowCells[idx].v === undefined) return '';
-                            return String(rowCells[idx].v).trim();
+                    if (data && data.stores && data.stores.length > 0) {
+                        allStores = data.stores;
+                        if (data.kpi) {
+                            document.getElementById('kpiTotal').textContent = data.kpi.total;
+                            document.getElementById('kpiLengkap').textContent = data.kpi.sudahLengkap;
+                            document.getElementById('kpiBelum').textContent = data.kpi.belumLengkap;
+                            document.getElementById('kpiPercent').textContent = data.kpi.percentage;
                         }
-
-                        fetchedStores.push({
-                            no: getCellVal(0),
-                            nama: getCellVal(1),
-                            iphone1: getCellVal(2),
-                            iphoneAcrylic: getCellVal(3),
-                            iphoneRiser: getCellVal(4),
-                            watch1: getCellVal(5),
-                            watch2: getCellVal(6),
-                            macAdhesive: getCellVal(7),
-                            appApr: getCellVal(8),
-                            aarMbaar1: getCellVal(9),
-                            aar2: getCellVal(10),
-                            summary: getCellVal(11)
-                        });
-                    }
-
-                    if (fetchedStores.length > 0) {
-                        allStores = fetchedStores;
                         renderGroupedTables();
-                        document.getElementById('lastUpdatedText').textContent = 'Live: ' + new Date().toLocaleTimeString('id-ID');
+                        document.getElementById('lastUpdatedText').textContent = 'Live: ' + (data.lastUpdated || new Date().toLocaleTimeString('id-ID'));
+                    } else {
+                        renderGroupedTables();
+                        document.getElementById('lastUpdatedText').textContent = 'Updated: ' + new Date().toLocaleTimeString('id-ID');
                     }
                 })
                 .catch(err => {
-                    console.log('Using preloaded dataset:', err);
+                    console.log('Using preloaded snapshot:', err);
+                    renderGroupedTables();
                     document.getElementById('lastUpdatedText').textContent = 'Updated: ' + new Date().toLocaleTimeString('id-ID');
                 });
         }
 
         window.onload = function() {
             renderGroupedTables();
-            loadDataFromSheets();
-            // Auto sync every 30 seconds
-            setInterval(loadDataFromSheets, 30000);
+            loadDataFromWebApp();
+            setInterval(loadDataFromWebApp, 30000);
         };
     </script>
 </body>
