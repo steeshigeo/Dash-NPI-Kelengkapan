@@ -611,6 +611,20 @@
             }
         }
 
+        function deduplicateStores(stores) {
+            let seen = new Set();
+            let uniqueList = [];
+            stores.forEach(s => {
+                let cleanName = (s.nama || '').trim().toLowerCase();
+                if (!cleanName || seen.has(cleanName)) return;
+                seen.add(cleanName);
+                uniqueList.push(s);
+            });
+            // Re-index store numbers 1..N
+            uniqueList.forEach((s, idx) => s.no = String(idx + 1));
+            return uniqueList;
+        }
+
         function groupStores(stores) {
             let success = [];
             let danger = [];
@@ -627,6 +641,9 @@
         }
 
         function renderAll() {
+            // Always ensure exact deduplicated list
+            storeList = deduplicateStores(storeList);
+
             let { success, danger, neutral } = groupStores(storeList);
 
             document.getElementById('statTotal').textContent = storeList.length;
@@ -817,14 +834,8 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.stores && data.stores.length > 0) {
-                        let fetched = data.stores;
-                        let uniqueFetched = fetched.filter((s, idx) => {
-                            if (fetched.length >= 41 && (idx === 36 || idx === 37)) return false;
-                            return true;
-                        });
-
-                        uniqueFetched.forEach((s, i) => s.no = String(i + 1));
-                        storeList = uniqueFetched;
+                        // Automatically filter out any duplicate store names based on name matching
+                        storeList = deduplicateStores(data.stores);
 
                         renderAll();
                         document.getElementById('lastSyncText').textContent = 'Live: ' + (data.lastUpdated || new Date().toLocaleTimeString('id-ID'));
