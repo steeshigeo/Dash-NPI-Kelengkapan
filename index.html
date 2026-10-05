@@ -573,7 +573,7 @@
         <div class="section-group" id="secDanger">
             <div class="section-header danger">
                 <div class="section-title">
-                    <span>⚠️ LIST TOKO 2: Mengisi Beberapa Saja (Belum Lengkap)</span>
+                    <span>⚠️️ LIST TOKO 2: Mengisi Beberapa Saja (Belum Lengkap)</span>
                 </div>
                 <span class="section-badge" id="badgeDanger">0 Toko</span>
             </div>
@@ -600,11 +600,11 @@
             </div>
         </div>
 
-        <!-- LIST TOKO 3 -->
+        <!-- LIST TOKO YANG -->
         <div class="section-group" id="secNeutral">
             <div class="section-header neutral">
                 <div class="section-title">
-                    <span>⏳ LIST TOKO 3: Belum Mengisi Semua (Belum Ada Data)</span>
+                    <span>⏳ LIST TOKO YANG: Belum Mengisi Semua (Belum Ada Data)</span>
                 </div>
                 <span class="section-badge" id="badgeNeutral">0 Toko</span>
             </div>
@@ -843,7 +843,7 @@
 
             sheetData = sheetData.concat(makeRows('LIST TOKO 1: SUDAH MENGISI SEMUA (' + success.length + ' Toko)', success));
             sheetData = sheetData.concat(makeRows('LIST TOKO 2: MENGISI BEBERAPA SAJA (' + danger.length + ' Toko)', danger));
-            sheetData = sheetData.concat(makeRows('LIST TOKO 3: BELUM MENGISI SEMUA (' + neutral.length + ' Toko)', neutral));
+            sheetData = sheetData.concat(makeRows('LIST TOKO YANG: BELUM MENGISI SEMUA (' + neutral.length + ' Toko)', neutral));
 
             let ws = XLSX.utils.aoa_to_sheet(sheetData);
             ws['!cols'] = [
@@ -917,7 +917,7 @@
 
             addPdfGroup(`LIST TOKO 1: Sudah Mengisi Semua (${success.length} Toko)`, success, [5, 150, 105]);
             addPdfGroup(`LIST TOKO 2: Mengisi Beberapa Saja (${danger.length} Toko)`, danger, [225, 29, 72]);
-            addPdfGroup(`LIST TOKO 3: Belum Mengisi Semua (${neutral.length} Toko)`, neutral, [71, 85, 105]);
+            addPdfGroup(`LIST TOKO YANG: Belum Mengisi Semua (${neutral.length} Toko)`, neutral, [71, 85, 105]);
 
             let pageCount = doc.internal.getNumberOfPages();
             for (let i = 1; i <= pageCount; i++) {
