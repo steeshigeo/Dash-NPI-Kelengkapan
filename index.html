@@ -431,17 +431,17 @@
             </div>
             <div class="stat-card green">
                 <div class="stat-label">Sudah Mengisi Semua</div>
-                <div class="stat-value" style="color: #059669;" id="statLengkap">9</div>
+                <div class="stat-value" style="color: #059669;" id="statLengkap">0</div>
                 <div class="stat-desc">Sudah Lengkap / Sudah Terima</div>
             </div>
             <div class="stat-card red">
                 <div class="stat-label">Mengisi Beberapa Saja</div>
-                <div class="stat-value" style="color: #e11d48;" id="statBelum">3</div>
+                <div class="stat-value" style="color: #e11d48;" id="statBelum">0</div>
                 <div class="stat-desc">Status Masih Belum Lengkap</div>
             </div>
             <div class="stat-card gray">
                 <div class="stat-label">Belum Mengisi Semua</div>
-                <div class="stat-value" style="color: #475569;" id="statEmpty">27</div>
+                <div class="stat-value" style="color: #475569;" id="statEmpty">0</div>
                 <div class="stat-desc">Belum Ada Data / Dalam Proses</div>
             </div>
         </div>
@@ -566,14 +566,14 @@
     <script>
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec";
 
-        // Initial 39 unique stores dataset
-        let storeList = [{"no": "1", "nama": "M116 Digimap Beachwalk Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "2", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "3", "nama": "M122 Digimap Galaxy Mall Surabaya", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "-", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "4", "nama": "M123 Digimap Mall Bali Galeria", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "1", "summary": "Belum Lengkap"}, {"no": "5", "nama": "M126 Digimap Ciputra World Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "SUDAH LENGKAP", "watch1": "Sudah Lengkap", "watch2": "", "macAdhesive": "", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "6", "nama": "M130 Digimap Sunset Road Bali", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "", "watch1": "SUDAH LENGKAP", "watch2": "SUDAH LENGKAP", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "7", "nama": "M206 Digimap Pakuwon Mall Surabaya", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "8", "nama": "M216 Digimap Tentrem Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "9", "nama": "M220 Digimap Malioboro Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "10", "nama": "M223 Digimap Roxy Square Jember", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "11", "nama": "M226 Digimap Ambon City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "12", "nama": "M229 Digimap Trans Icon Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "13", "nama": "M230 Digimap The Park Kendari", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "14", "nama": "M231 Digimap Gress Mall Gresik", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "15", "nama": "M232 Digimap Pakuwon Mall Solo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "16", "nama": "M233 Digimap Unimas District Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Lengkap", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "17", "nama": "M236 Digimap Palu Grand Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "18", "nama": "M237 Digimap Solo Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "19", "nama": "M239 Digimap Icon Mall Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "20", "nama": "M244 Digimap Java Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "21", "nama": "M246 Digimap Malang Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "22", "nama": "M248 Digimap Suncity Mall Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "23", "nama": "M250 Digimap Lippo Plaza Batu", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "24", "nama": "M253 Digimap Plaza Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "25", "nama": "M258 Digimap Lippo Plaza Manado", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "26", "nama": "M260 Digimap Kudus Extention Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "27", "nama": "M265 Digimap Merr Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "28", "nama": "M268 Digimap Diana Mall Timika", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "29", "nama": "M277 Digimap Citimall Tuban", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "30", "nama": "M281 Digimap Ngaliyan Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "31", "nama": "M283 Digimap Basuki Rahmat Tulungagung", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "32", "nama": "M285 Digimap Blitar Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "33", "nama": "M240 Digimap Pacific Mall Tegal", "iphone1": "", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "sudah lengkap", "watch1": "Sudah Lengkap", "watch2": "SUDAH LENGKAP", "macAdhesive": "sudah lengkap", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "34", "nama": "M278 Digimap A.S.S Brebes", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "35", "nama": "M288 Digimap Mojopahit Street Mojokerto", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "36", "nama": "M289 Digimap Maleo Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "37", "nama": "M293 Digimap Jend Sudirman Salatiga", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "38", "nama": "M294 Digimap Bojonegoro Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "sudah terima", "aar2": "-", "summary": "-"}, {"no": "39", "nama": "M297 Digimap Ponorogo City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}];
+        // Master 39 Target Stores Definition (Locked to exactly these 39 stores in exact order)
+        const MASTER_39_STORES = [{"code": "M116", "nama": "M116 Digimap Beachwalk Bali"}, {"code": "M121", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya"}, {"code": "M122", "nama": "M122 Digimap Galaxy Mall Surabaya"}, {"code": "M123", "nama": "M123 Digimap Mall Bali Galeria"}, {"code": "M126", "nama": "M126 Digimap Ciputra World Surabaya"}, {"code": "M130", "nama": "M130 Digimap Sunset Road Bali"}, {"code": "M206", "nama": "M206 Digimap Pakuwon Mall Surabaya"}, {"code": "M216", "nama": "M216 Digimap Tentrem Mall Semarang"}, {"code": "M220", "nama": "M220 Digimap Malioboro Mall"}, {"code": "M223", "nama": "M223 Digimap Roxy Square Jember"}, {"code": "M226", "nama": "M226 Digimap Ambon City Center"}, {"code": "M229", "nama": "M229 Digimap Trans Icon Surabaya"}, {"code": "M230", "nama": "M230 Digimap The Park Kendari"}, {"code": "M231", "nama": "M231 Digimap Gress Mall Gresik"}, {"code": "M232", "nama": "M232 Digimap Pakuwon Mall Solo"}, {"code": "M233", "nama": "M233 Digimap Unimas District Sidoarjo"}, {"code": "M236", "nama": "M236 Digimap Palu Grand Mall"}, {"code": "M237", "nama": "M237 Digimap Solo Square"}, {"code": "M239", "nama": "M239 Digimap Icon Mall Bali"}, {"code": "M244", "nama": "M244 Digimap Java Mall Semarang"}, {"code": "M246", "nama": "M246 Digimap Malang Town Square"}, {"code": "M248", "nama": "M248 Digimap Suncity Mall Sidoarjo"}, {"code": "M250", "nama": "M250 Digimap Lippo Plaza Batu"}, {"code": "M253", "nama": "M253 Digimap Plaza Surabaya"}, {"code": "M258", "nama": "M258 Digimap Lippo Plaza Manado"}, {"code": "M260", "nama": "M260 Digimap Kudus Extention Mall"}, {"code": "M265", "nama": "M265 Digimap Merr Street"}, {"code": "M268", "nama": "M268 Digimap Diana Mall Timika"}, {"code": "M277", "nama": "M277 Digimap Citimall Tuban"}, {"code": "M281", "nama": "M281 Digimap Ngaliyan Street"}, {"code": "M283", "nama": "M283 Digimap Basuki Rahmat Tulungagung"}, {"code": "M285", "nama": "M285 Digimap Blitar Square"}, {"code": "M240", "nama": "M240 Digimap Pacific Mall Tegal"}, {"code": "M278", "nama": "M278 Digimap A.S.S Brebes"}, {"code": "M288", "nama": "M288 Digimap Mojopahit Street Mojokerto"}, {"code": "M289", "nama": "M289 Digimap Maleo Town Square"}, {"code": "M293", "nama": "M293 Digimap Jend Sudirman Salatiga"}, {"code": "M294", "nama": "M294 Digimap Bojonegoro Street"}, {"code": "M297", "nama": "M297 Digimap Ponorogo City Center"}];
 
-        // Allowed 39 target store names (lowercase for strict filtering)
-        const TARGET_STORE_NAMES = ["m116 digimap beachwalk bali", "m121 digimap tunjungan plaza 3 surabaya", "m122 digimap galaxy mall surabaya", "m123 digimap mall bali galeria", "m126 digimap ciputra world surabaya", "m130 digimap sunset road bali", "m206 digimap pakuwon mall surabaya", "m216 digimap tentrem mall semarang", "m220 digimap malioboro mall", "m223 digimap roxy square jember", "m226 digimap ambon city center", "m229 digimap trans icon surabaya", "m230 digimap the park kendari", "m231 digimap gress mall gresik", "m232 digimap pakuwon mall solo", "m233 digimap unimas district sidoarjo", "m236 digimap palu grand mall", "m237 digimap solo square", "m239 digimap icon mall bali", "m244 digimap java mall semarang", "m246 digimap malang town square", "m248 digimap suncity mall sidoarjo", "m250 digimap lippo plaza batu", "m253 digimap plaza surabaya", "m258 digimap lippo plaza manado", "m260 digimap kudus extention mall", "m265 digimap merr street", "m268 digimap diana mall timika", "m277 digimap citimall tuban", "m281 digimap ngaliyan street", "m283 digimap basuki rahmat tulungagung", "m285 digimap blitar square", "m240 digimap pacific mall tegal", "m278 digimap a.s.s brebes", "m288 digimap mojopahit street mojokerto", "m289 digimap maleo town square", "m293 digimap jend sudirman salatiga", "m294 digimap bojonegoro street", "m297 digimap ponorogo city center"];
+        // Initial Dataset
+        let masterStoreData = [{"no": "1", "code": "M116", "nama": "M116 Digimap Beachwalk Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "2", "code": "M121", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "3", "code": "M122", "nama": "M122 Digimap Galaxy Mall Surabaya", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "-", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "4", "code": "M123", "nama": "M123 Digimap Mall Bali Galeria", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "1", "summary": "Belum Lengkap"}, {"no": "5", "code": "M126", "nama": "M126 Digimap Ciputra World Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "SUDAH LENGKAP", "watch1": "Sudah Lengkap", "watch2": "", "macAdhesive": "", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "6", "code": "M130", "nama": "M130 Digimap Sunset Road Bali", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "", "watch1": "SUDAH LENGKAP", "watch2": "SUDAH LENGKAP", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "7", "code": "M206", "nama": "M206 Digimap Pakuwon Mall Surabaya", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "8", "code": "M216", "nama": "M216 Digimap Tentrem Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "9", "code": "M220", "nama": "M220 Digimap Malioboro Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "10", "code": "M223", "nama": "M223 Digimap Roxy Square Jember", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "11", "code": "M226", "nama": "M226 Digimap Ambon City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "12", "code": "M229", "nama": "M229 Digimap Trans Icon Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "13", "code": "M230", "nama": "M230 Digimap The Park Kendari", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "14", "code": "M231", "nama": "M231 Digimap Gress Mall Gresik", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "15", "code": "M232", "nama": "M232 Digimap Pakuwon Mall Solo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "16", "code": "M233", "nama": "M233 Digimap Unimas District Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Lengkap", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "17", "code": "M236", "nama": "M236 Digimap Palu Grand Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "18", "code": "M237", "nama": "M237 Digimap Solo Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "19", "code": "M239", "nama": "M239 Digimap Icon Mall Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "20", "code": "M244", "nama": "M244 Digimap Java Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "21", "code": "M246", "nama": "M246 Digimap Malang Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "22", "code": "M248", "nama": "M248 Digimap Suncity Mall Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "23", "code": "M250", "nama": "M250 Digimap Lippo Plaza Batu", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "24", "code": "M253", "nama": "M253 Digimap Plaza Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "25", "code": "M258", "nama": "M258 Digimap Lippo Plaza Manado", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "26", "code": "M260", "nama": "M260 Digimap Kudus Extention Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "27", "code": "M265", "nama": "M265 Digimap Merr Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "28", "code": "M268", "nama": "M268 Digimap Diana Mall Timika", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "29", "code": "M277", "nama": "M277 Digimap Citimall Tuban", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "30", "code": "M281", "nama": "M281 Digimap Ngaliyan Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "31", "code": "M283", "nama": "M283 Digimap Basuki Rahmat Tulungagung", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "32", "code": "M285", "nama": "M285 Digimap Blitar Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "33", "code": "M240", "nama": "M240 Digimap Pacific Mall Tegal", "iphone1": "", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "sudah lengkap", "watch1": "Sudah Lengkap", "watch2": "SUDAH LENGKAP", "macAdhesive": "sudah lengkap", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "34", "code": "M278", "nama": "M278 Digimap A.S.S Brebes", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "35", "code": "M288", "nama": "M288 Digimap Mojopahit Street Mojokerto", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "36", "code": "M289", "nama": "M289 Digimap Maleo Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "37", "code": "M293", "nama": "M293 Digimap Jend Sudirman Salatiga", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "38", "code": "M294", "nama": "M294 Digimap Bojonegoro Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "sudah terima", "aar2": "-", "summary": "-"}, {"no": "39", "code": "M297", "nama": "M297 Digimap Ponorogo City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}];
 
         function formatPill(val) {
-            if (!val || val.trim() === '') return '<span class="pill pill-empty">-</span>';
+            if (!val || typeof val !== 'string' || val.trim() === '') return '<span class="pill pill-empty">-</span>';
             let v = val.trim();
             let upper = v.toUpperCase();
             
@@ -593,13 +593,13 @@
         function getStoreCategory(s) {
             let cols = [s.iphone1, s.iphoneAcrylic, s.iphoneRiser, s.watch1, s.watch2, 
                         s.macAdhesive, s.appApr, s.aarMbaar1, s.aar2];
-            let summary = (s.summary || '').trim().toUpperCase();
+            let summary = (s.summary || '').toString().trim().toUpperCase();
 
-            let hasBelum = summary.includes('BELUM') || cols.some(c => (c || '').toUpperCase().includes('BELUM'));
+            let hasBelum = summary.includes('BELUM') || cols.some(c => (c || '').toString().toUpperCase().includes('BELUM'));
             
             let hasLengkapOrTerima = (summary.includes('LENGKAP') || summary.includes('TERIMA')) || 
                                      cols.some(c => {
-                                         let u = (c || '').toUpperCase();
+                                         let u = (c || '').toString().toUpperCase();
                                          return u.includes('LENGKAP') || u.includes('TERIMA');
                                      });
 
@@ -612,21 +612,54 @@
             }
         }
 
-        function filterAndDeduplicateStores(stores) {
-            let seen = new Set();
-            let uniqueList = [];
-            stores.forEach(s => {
-                let cleanName = (s.nama || '').trim().toLowerCase();
-                if (!cleanName || seen.has(cleanName)) return;
-                // Strict check against the 39 target stores
-                if (TARGET_STORE_NAMES.includes(cleanName)) {
-                    seen.add(cleanName);
-                    uniqueList.push(s);
+        // Helper to extract store code (e.g. M116, M121) from any string
+        function extractStoreCode(str) {
+            if (!str) return '';
+            let m = str.toString().match(/(M\d+)/i);
+            return m ? m[1].toUpperCase() : '';
+        }
+
+        // Process and map incoming raw array from Apps Script onto the Master 39 List
+        function mergeIncomingData(incomingArray) {
+            if (!Array.isArray(incomingArray) || incomingArray.length === 0) return;
+
+            // Map incoming items by store code Mxxx
+            let incomingMap = {};
+            incomingArray.forEach(item => {
+                let name = item.nama || item["Nama Toko"] || item["namaToko"] || item.Nama || item.store || '';
+                let code = extractStoreCode(name);
+                if (code) {
+                    incomingMap[code] = {
+                        iphone1: item.iphone1 || item["iPhone (1)"] || item["iPhone 1"] || '',
+                        iphoneAcrylic: item.iphoneAcrylic || item["iPhone (Acrylic)"] || '',
+                        iphoneRiser: item.iphoneRiser || item["iPhone (F240 Riser)"] || '',
+                        watch1: item.watch1 || item["Apple Watch (1)"] || '',
+                        watch2: item.watch2 || item["Apple Watch (2)"] || '',
+                        macAdhesive: item.macAdhesive || item["Mac Adhesive"] || '',
+                        appApr: item.appApr || item["APP + APR"] || '',
+                        aarMbaar1: item.aarMbaar1 || item["AAR + MBAAR (1)"] || '',
+                        aar2: item.aar2 || item["AAR (2)"] || '',
+                        summary: item.summary || item["Summary Status"] || ''
+                    };
                 }
             });
-            // Re-index master store numbers 1..39
-            uniqueList.forEach((s, idx) => s.no = String(idx + 1));
-            return uniqueList;
+
+            // Update master dataset (preserving the 39 exact stores order)
+            masterStoreData.forEach(store => {
+                let fresh = incomingMap[store.code];
+                if (fresh) {
+                    if (fresh.iphone1 !== undefined) store.iphone1 = String(fresh.iphone1).trim();
+                    if (fresh.iphoneAcrylic !== undefined) store.iphoneAcrylic = String(fresh.iphoneAcrylic).trim();
+                    if (fresh.iphoneRiser !== undefined) store.iphoneRiser = String(fresh.iphoneRiser).trim();
+                    if (fresh.watch1 !== undefined) store.watch1 = String(fresh.watch1).trim();
+                    if (fresh.watch2 !== undefined) store.watch2 = String(fresh.watch2).trim();
+                    if (fresh.macAdhesive !== undefined) store.macAdhesive = String(fresh.macAdhesive).trim();
+                    if (fresh.appApr !== undefined) store.appApr = String(fresh.appApr).trim();
+                    if (fresh.aarMbaar1 !== undefined) store.aarMbaar1 = String(fresh.aarMbaar1).trim();
+                    if (fresh.aar2 !== undefined) store.aar2 = String(fresh.aar2).trim();
+                    if (fresh.summary !== undefined) store.summary = String(fresh.summary).trim();
+                }
+            });
         }
 
         function groupStores(stores) {
@@ -645,11 +678,9 @@
         }
 
         function renderAll() {
-            storeList = filterAndDeduplicateStores(storeList);
+            let { success, danger, neutral } = groupStores(masterStoreData);
 
-            let { success, danger, neutral } = groupStores(storeList);
-
-            document.getElementById('statTotal').textContent = storeList.length;
+            document.getElementById('statTotal').textContent = masterStoreData.length;
             document.getElementById('statLengkap').textContent = success.length;
             document.getElementById('statBelum').textContent = danger.length;
             document.getElementById('statEmpty').textContent = neutral.length;
@@ -674,7 +705,7 @@
                 return;
             }
 
-            // Numbering is sequential (1..N) for EACH capsule/column table
+            // Numbering is sequential 1..N inside EACH capsule/table
             list.forEach((s, idx) => {
                 let cat = getStoreCategory(s);
                 let summaryDisplay = s.summary && s.summary !== '-' ? s.summary : (cat === 'success' ? 'Sudah Terima' : '-');
@@ -713,7 +744,7 @@
         }
 
         function exportToExcel() {
-            let { success, danger, neutral } = groupStores(storeList);
+            let { success, danger, neutral } = groupStores(masterStoreData);
             let wb = XLSX.utils.book_new();
 
             function makeRows(title, list) {
@@ -739,7 +770,7 @@
             sheetData.push([]);
             sheetData.push(['RINGKASAN STATUS PENGISIAN']);
             sheetData.push(['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']);
-            sheetData.push([storeList.length, success.length, danger.length, neutral.length]);
+            sheetData.push([masterStoreData.length, success.length, danger.length, neutral.length]);
             sheetData.push([]);
 
             sheetData = sheetData.concat(makeRows('KELOMPOK 1: SUDAH MENGISI SEMUA (' + success.length + ' Toko)', success));
@@ -760,7 +791,7 @@
         function exportToPDF() {
             const { jsPDF } = window.jspdf;
             let doc = new jsPDF('landscape', 'mm', 'a4');
-            let { success, danger, neutral } = groupStores(storeList);
+            let { success, danger, neutral } = groupStores(masterStoreData);
 
             doc.setFontSize(16);
             doc.setFont('helvetica', 'bold');
@@ -775,7 +806,7 @@
             doc.autoTable({
                 startY: 26,
                 head: [['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']],
-                body: [[storeList.length, success.length, danger.length, neutral.length]],
+                body: [[masterStoreData.length, success.length, danger.length, neutral.length]],
                 theme: 'grid',
                 headStyles: { fillColor: [15, 23, 42], textColor: 255, fontStyle: 'bold' },
                 styles: { fontSize: 9, halign: 'center' },
@@ -837,14 +868,20 @@
             fetch(WEB_APP_URL + '?action=getData')
                 .then(response => response.json())
                 .then(data => {
-                    if (data && data.stores && data.stores.length > 0) {
-                        storeList = filterAndDeduplicateStores(data.stores);
-                        renderAll();
+                    let rawStores = [];
+                    if (data && Array.isArray(data.stores)) {
+                        rawStores = data.stores;
+                    } else if (data && Array.isArray(data)) {
+                        rawStores = data;
+                    }
+                    
+                    if (rawStores.length > 0) {
+                        mergeIncomingData(rawStores);
                         document.getElementById('lastSyncText').textContent = 'Live: ' + (data.lastUpdated || new Date().toLocaleTimeString('id-ID'));
                     } else {
-                        renderAll();
                         document.getElementById('lastSyncText').textContent = 'Updated: ' + new Date().toLocaleTimeString('id-ID');
                     }
+                    renderAll();
                 })
                 .catch(err => {
                     console.log('Using local dataset snapshot:', err);
