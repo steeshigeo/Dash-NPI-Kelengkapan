@@ -17,9 +17,8 @@
     <style>
         :root {
             --primary-dark: #0f172a;
-            --primary-accent: #3b82f6;
-            --accent-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            --bg-main: #f1f5f9;
+            --primary-accent: #2563eb;
+            --bg-main: #f8fafc;
             --card-bg: #ffffff;
             --text-dark: #0f172a;
             --text-muted: #64748b;
@@ -33,13 +32,10 @@
             --danger-bg: #fff1f2;
             --danger-border: #fecdd3;
             
-            --warning-color: #d97706;
-            --warning-bg: #fffbeb;
-            
             --info-color: #0284c7;
             --info-bg: #f0f9ff;
             
-            --neutral-bg: #f8fafc;
+            --neutral-bg: #f1f5f9;
             --neutral-text: #475569;
         }
 
@@ -62,14 +58,14 @@
             margin: 0 auto;
         }
 
-        /* Fresh Header Styling */
+        /* Header Styling */
         header.hero-header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             border-radius: 20px;
-            padding: 28px 32px;
+            padding: 26px 32px;
             color: #ffffff;
             margin-bottom: 24px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.18);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,7 +75,7 @@
 
         .hero-title h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 700;
             letter-spacing: -0.02em;
             display: flex;
@@ -88,9 +84,9 @@
         }
 
         .hero-title p {
-            font-size: 14px;
+            font-size: 13.5px;
             color: #94a3b8;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .header-pills {
@@ -132,7 +128,7 @@
         /* Stat Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 18px;
             margin-bottom: 24px;
         }
@@ -142,15 +138,15 @@
             border-radius: 16px;
             padding: 20px 24px;
             border: 1px solid var(--border-light);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
             position: relative;
             overflow: hidden;
             transition: all 0.25s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px -5px rgba(0, 0, 0, 0.06);
         }
 
         .stat-card::before {
@@ -162,24 +158,24 @@
             height: 4px;
         }
 
-        .stat-card.blue::before { background: #3b82f6; }
-        .stat-card.green::before { background: #10b981; }
-        .stat-card.red::before { background: #f43f5e; }
-        .stat-card.cyan::before { background: #06b6d4; }
+        .stat-card.blue::before { background: #2563eb; }
+        .stat-card.green::before { background: #059669; }
+        .stat-card.red::before { background: #e11d48; }
+        .stat-card.gray::before { background: #64748b; }
 
         .stat-label {
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
             color: var(--text-muted);
         }
 
         .stat-value {
             font-family: 'Outfit', sans-serif;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 700;
-            margin-top: 8px;
+            margin-top: 6px;
             color: var(--text-dark);
             line-height: 1;
         }
@@ -187,7 +183,7 @@
         .stat-desc {
             font-size: 12px;
             color: var(--text-muted);
-            margin-top: 8px;
+            margin-top: 6px;
         }
 
         /* Action Toolbar */
@@ -195,7 +191,7 @@
             background: var(--card-bg);
             border-radius: 16px;
             padding: 16px 24px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             border: 1px solid var(--border-light);
             box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             display: flex;
@@ -213,10 +209,10 @@
 
         .search-field input {
             width: 100%;
-            padding: 11px 16px 11px 42px;
+            padding: 10px 16px 10px 42px;
             border-radius: 10px;
             border: 1px solid var(--border-light);
-            font-size: 14px;
+            font-size: 13.5px;
             background: #f8fafc;
             outline: none;
             transition: all 0.2s;
@@ -225,7 +221,7 @@
         .search-field input:focus {
             background: #ffffff;
             border-color: var(--primary-accent);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }
 
         .search-icon {
@@ -234,7 +230,7 @@
             top: 50%;
             transform: translateY(-50%);
             color: #94a3b8;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .action-btns {
@@ -248,7 +244,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 18px;
+            padding: 9.5px 18px;
             border-radius: 10px;
             font-size: 13px;
             font-weight: 600;
@@ -268,14 +264,14 @@
         .btn-xlsx {
             background: #059669;
             color: white;
-            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.18);
         }
         .btn-xlsx:hover { background: #047857; }
 
         .btn-pdf {
             background: #e11d48;
             color: white;
-            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.2);
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.18);
         }
         .btn-pdf:hover { background: #be123c; }
 
@@ -288,16 +284,16 @@
 
         /* Group Sections */
         .section-group {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .section-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 20px;
-            border-radius: 14px;
-            margin-bottom: 14px;
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
         }
 
         .section-header.success {
@@ -320,7 +316,7 @@
 
         .section-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 16px;
+            font-size: 15.5px;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -339,16 +335,16 @@
         /* Table Card Styling */
         .table-card {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 14px;
             border: 1px solid var(--border-light);
             overflow-x: auto;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 12.5px;
             text-align: left;
             white-space: nowrap;
         }
@@ -360,7 +356,7 @@
             text-transform: uppercase;
             font-size: 11px;
             letter-spacing: 0.04em;
-            padding: 14px 16px;
+            padding: 12px 14px;
             border-bottom: 1px solid var(--border-light);
             position: sticky;
             top: 0;
@@ -368,7 +364,7 @@
         }
 
         td {
-            padding: 13px 16px;
+            padding: 11px 14px;
             border-bottom: 1px solid var(--border-light);
             color: var(--text-dark);
         }
@@ -384,7 +380,7 @@
         /* Modern Status Badges */
         .pill {
             display: inline-block;
-            padding: 4px 10px;
+            padding: 3.5px 10px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 700;
@@ -399,9 +395,9 @@
         .pill-empty { color: #cbd5e1; }
 
         footer {
-            margin-top: 40px;
+            margin-top: 36px;
             text-align: center;
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
             padding-bottom: 24px;
         }
@@ -413,7 +409,7 @@
         <header class="hero-header">
             <div class="hero-title">
                 <h1>📊 Monitoring Kelengkapan Toko NPI 2026</h1>
-                <p>Dashboard Pemantauan 39 Toko Target & Integrasi Realtime Google Sheets</p>
+                <p>Status Pengisian Kelengkapan Toko Target (Realtime Web App Sync)</p>
             </div>
             <div class="header-pills">
                 <a href="https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec" target="_blank" class="btn btn-link">
@@ -431,22 +427,22 @@
             <div class="stat-card blue">
                 <div class="stat-label">Total Toko Target</div>
                 <div class="stat-value" id="statTotal">39</div>
-                <div class="stat-desc">39 Toko unik (tanpa duplikasi)</div>
+                <div class="stat-desc">Daftar toko unik tanpa duplikasi</div>
             </div>
             <div class="stat-card green">
-                <div class="stat-label">Sudah Lengkap</div>
-                <div class="stat-value" style="color: #059669;" id="statLengkap">5</div>
-                <div class="stat-desc">Memenuhi seluruh item checklist</div>
+                <div class="stat-label">Sudah Mengisi Semua</div>
+                <div class="stat-value" style="color: #059669;" id="statLengkap">9</div>
+                <div class="stat-desc">Sudah Lengkap / Sudah Terima</div>
             </div>
             <div class="stat-card red">
-                <div class="stat-label">Belum Lengkap</div>
+                <div class="stat-label">Mengisi Beberapa Saja</div>
                 <div class="stat-value" style="color: #e11d48;" id="statBelum">3</div>
-                <div class="stat-desc">Membutuhkan perhatian / follow up</div>
+                <div class="stat-desc">Status Masih Belum Lengkap</div>
             </div>
-            <div class="stat-card cyan">
-                <div class="stat-label">% Kelengkapan</div>
-                <div class="stat-value" style="color: #0284c7;" id="statPercent">12.82%</div>
-                <div class="stat-desc">Rasio toko yang sudah lengkap</div>
+            <div class="stat-card gray">
+                <div class="stat-label">Belum Mengisi Semua</div>
+                <div class="stat-value" style="color: #475569;" id="statEmpty">27</div>
+                <div class="stat-desc">Belum Ada Data / Dalam Proses</div>
             </div>
         </div>
 
@@ -454,7 +450,7 @@
         <div class="toolbar">
             <div class="search-field">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="searchInput" placeholder="Cari nama toko atau lokasi..." onkeyup="filterAllTables()">
+                <input type="text" id="searchInput" placeholder="Cari nama toko..." onkeyup="filterAllTables()">
             </div>
             <div class="action-btns">
                 <button class="btn btn-refresh" onclick="loadDataFromWebApp()">
@@ -469,11 +465,11 @@
             </div>
         </div>
 
-        <!-- Group 1: Sudah Lengkap -->
+        <!-- Category 1: Sudah Mengisi Semua -->
         <div class="section-group" id="secSuccess">
             <div class="section-header success">
                 <div class="section-title">
-                    <span>✅ Kelompok 1: Toko Sudah Lengkap</span>
+                    <span>✅ Kelompok 1: Sudah Mengisi Semua (Sudah Lengkap / Sudah Terima)</span>
                 </div>
                 <span class="section-badge" id="badgeSuccess">0 Toko</span>
             </div>
@@ -500,11 +496,11 @@
             </div>
         </div>
 
-        <!-- Group 2: Belum Lengkap -->
+        <!-- Category 2: Mengisi Beberapa Saja -->
         <div class="section-group" id="secDanger">
             <div class="section-header danger">
                 <div class="section-title">
-                    <span>⚠️ Kelompok 2: Toko Belum Lengkap</span>
+                    <span>⚠️ Kelompok 2: Mengisi Beberapa Saja (Belum Lengkap)</span>
                 </div>
                 <span class="section-badge" id="badgeDanger">0 Toko</span>
             </div>
@@ -531,11 +527,11 @@
             </div>
         </div>
 
-        <!-- Group 3: Dalam Proses / Belum ada Data -->
+        <!-- Category 3: Belum Mengisi Semua -->
         <div class="section-group" id="secNeutral">
             <div class="section-header neutral">
                 <div class="section-title">
-                    <span>⏳ Kelompok 3: Toko Dalam Proses / Belum Ada Data</span>
+                    <span>⏳ Kelompok 3: Belum Mengisi Semua (Belum Ada Data)</span>
                 </div>
                 <span class="section-badge" id="badgeNeutral">0 Toko</span>
             </div>
@@ -570,7 +566,7 @@
     <script>
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec";
 
-        // Initial 39 unique stores dataset (without duplicates)
+        // Initial 39 unique stores dataset
         let storeList = [{"no": "1", "nama": "M116 Digimap Beachwalk Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "2", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "3", "nama": "M122 Digimap Galaxy Mall Surabaya", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "-", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "4", "nama": "M123 Digimap Mall Bali Galeria", "iphone1": "Sudah lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "BELUM", "watch1": "Sudah Lengkap", "watch2": "Sudah Lengkap", "macAdhesive": "Sudah Lengkap", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "1", "summary": "Belum Lengkap"}, {"no": "5", "nama": "M126 Digimap Ciputra World Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "BELUM", "iphoneRiser": "SUDAH LENGKAP", "watch1": "Sudah Lengkap", "watch2": "", "macAdhesive": "", "appApr": "SUDAH LENGKAP", "aarMbaar1": "", "aar2": "-", "summary": "Belum Lengkap"}, {"no": "6", "nama": "M130 Digimap Sunset Road Bali", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "", "watch1": "SUDAH LENGKAP", "watch2": "SUDAH LENGKAP", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "-", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "7", "nama": "M206 Digimap Pakuwon Mall Surabaya", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "8", "nama": "M216 Digimap Tentrem Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "9", "nama": "M220 Digimap Malioboro Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "10", "nama": "M223 Digimap Roxy Square Jember", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "11", "nama": "M226 Digimap Ambon City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "12", "nama": "M229 Digimap Trans Icon Surabaya", "iphone1": "", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "13", "nama": "M230 Digimap The Park Kendari", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "14", "nama": "M231 Digimap Gress Mall Gresik", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "15", "nama": "M232 Digimap Pakuwon Mall Solo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "16", "nama": "M233 Digimap Unimas District Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Lengkap", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "17", "nama": "M236 Digimap Palu Grand Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "18", "nama": "M237 Digimap Solo Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "19", "nama": "M239 Digimap Icon Mall Bali", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "20", "nama": "M244 Digimap Java Mall Semarang", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "21", "nama": "M246 Digimap Malang Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}, {"no": "22", "nama": "M248 Digimap Suncity Mall Sidoarjo", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "23", "nama": "M250 Digimap Lippo Plaza Batu", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "24", "nama": "M253 Digimap Plaza Surabaya", "iphone1": "Sudah Lengkap", "iphoneAcrylic": "", "iphoneRiser": "", "watch1": "", "watch2": "", "macAdhesive": "", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "25", "nama": "M258 Digimap Lippo Plaza Manado", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "26", "nama": "M260 Digimap Kudus Extention Mall", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "27", "nama": "M265 Digimap Merr Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "28", "nama": "M268 Digimap Diana Mall Timika", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "29", "nama": "M277 Digimap Citimall Tuban", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "30", "nama": "M281 Digimap Ngaliyan Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "31", "nama": "M283 Digimap Basuki Rahmat Tulungagung", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "32", "nama": "M285 Digimap Blitar Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "33", "nama": "M240 Digimap Pacific Mall Tegal", "iphone1": "", "iphoneAcrylic": "SUDAH LENGKAP", "iphoneRiser": "sudah lengkap", "watch1": "Sudah Lengkap", "watch2": "SUDAH LENGKAP", "macAdhesive": "sudah lengkap", "appApr": "Sudah lengkap", "aarMbaar1": "", "aar2": "-", "summary": "Sudah Lengkap"}, {"no": "34", "nama": "M278 Digimap A.S.S Brebes", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "35", "nama": "M288 Digimap Mojopahit Street Mojokerto", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "36", "nama": "M289 Digimap Maleo Town Square", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "", "aar2": "-", "summary": "-"}, {"no": "37", "nama": "M293 Digimap Jend Sudirman Salatiga", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "-", "aar2": "-", "summary": "-"}, {"no": "38", "nama": "M294 Digimap Bojonegoro Street", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "sudah terima", "aar2": "-", "summary": "-"}, {"no": "39", "nama": "M297 Digimap Ponorogo City Center", "iphone1": "-", "iphoneAcrylic": "-", "iphoneRiser": "-", "watch1": "-", "watch2": "-", "macAdhesive": "-", "appApr": "-", "aarMbaar1": "Sudah Terima", "aar2": "-", "summary": "-"}];
 
         function formatPill(val) {
@@ -586,9 +582,33 @@
                 return `<span class="pill pill-danger">${v}</span>`;
             }
             if (upper.includes('TERIMA')) {
-                return `<span class="pill pill-info">${v}</span>`;
+                return `<span class="pill pill-success">${v}</span>`;
             }
             return `<span class="pill pill-neutral">${v}</span>`;
+        }
+
+        function getStoreCategory(s) {
+            let cols = [s.iphone1, s.iphoneAcrylic, s.iphoneRiser, s.watch1, s.watch2, 
+                        s.macAdhesive, s.appApr, s.aarMbaar1, s.aar2];
+            let summary = (s.summary || '').trim().toUpperCase();
+
+            // Check if summary or any column has "BELUM"
+            let hasBelum = summary.includes('BELUM') || cols.some(c => (c || '').toUpperCase().includes('BELUM'));
+            
+            // Check if summary or any column has "LENGKAP" or "TERIMA"
+            let hasLengkapOrTerima = (summary.includes('LENGKAP') || summary.includes('TERIMA')) || 
+                                     cols.some(c => {
+                                         let u = (c || '').toUpperCase();
+                                         return u.includes('LENGKAP') || u.includes('TERIMA');
+                                     });
+
+            if (hasBelum) {
+                return 'danger'; // Mengisi Beberapa Saja (Belum Lengkap)
+            } else if (hasLengkapOrTerima) {
+                return 'success'; // Sudah Mengisi Semua (Sudah Lengkap / Sudah Terima)
+            } else {
+                return 'neutral'; // Belum Mengisi Semua (Belum Ada Data)
+            }
         }
 
         function groupStores(stores) {
@@ -597,14 +617,10 @@
             let neutral = [];
 
             stores.forEach(s => {
-                let sumUpper = (s.summary || '').toUpperCase();
-                if (sumUpper.includes('LENGKAP') && !sumUpper.includes('BELUM')) {
-                    success.push(s);
-                } else if (sumUpper.includes('BELUM')) {
-                    danger.push(s);
-                } else {
-                    neutral.push(s);
-                }
+                let cat = getStoreCategory(s);
+                if (cat === 'success') success.push(s);
+                else if (cat === 'danger') danger.push(s);
+                else neutral.push(s);
             });
 
             return { success, danger, neutral };
@@ -616,8 +632,7 @@
             document.getElementById('statTotal').textContent = storeList.length;
             document.getElementById('statLengkap').textContent = success.length;
             document.getElementById('statBelum').textContent = danger.length;
-            let percent = storeList.length > 0 ? ((success.length / storeList.length) * 100).toFixed(2) + '%' : '0%';
-            document.getElementById('statPercent').textContent = percent;
+            document.getElementById('statEmpty').textContent = neutral.length;
 
             document.getElementById('badgeSuccess').textContent = success.length + ' Toko';
             document.getElementById('badgeDanger').textContent = danger.length + ' Toko';
@@ -635,11 +650,14 @@
             tbody.innerHTML = '';
 
             if (list.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:#94a3b8; padding:24px;">Tidak ada data toko dalam kelompok ini</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:#94a3b8; padding:20px;">Tidak ada data toko dalam kelompok ini</td></tr>`;
                 return;
             }
 
             list.forEach(s => {
+                let cat = getStoreCategory(s);
+                let summaryDisplay = s.summary && s.summary !== '-' ? s.summary : (cat === 'success' ? 'Sudah Terima' : '-');
+
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td style="font-weight:700; color:#64748b;">${s.no}</td>
@@ -653,7 +671,7 @@
                     <td>${formatPill(s.appApr)}</td>
                     <td>${formatPill(s.aarMbaar1)}</td>
                     <td>${formatPill(s.aar2)}</td>
-                    <td>${formatPill(s.summary)}</td>
+                    <td>${formatPill(summaryDisplay)}</td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -682,10 +700,12 @@
                 rows.push([title]);
                 rows.push(['No', 'Nama Toko', 'iPhone (1)', 'iPhone (Acrylic)', 'iPhone (F240 Riser)', 'Apple Watch (1)', 'Apple Watch (2)', 'Mac Adhesive', 'APP + APR', 'AAR + MBAAR (1)', 'AAR (2)', 'Summary Status']);
                 list.forEach(s => {
+                    let cat = getStoreCategory(s);
+                    let sum = s.summary && s.summary !== '-' ? s.summary : (cat === 'success' ? 'Sudah Terima' : '-');
                     rows.push([
                         s.no, s.nama, s.iphone1 || '-', s.iphoneAcrylic || '-', s.iphoneRiser || '-',
                         s.watch1 || '-', s.watch2 || '-', s.macAdhesive || '-', s.appApr || '-',
-                        s.aarMbaar1 || '-', s.aar2 || '-', s.summary || '-'
+                        s.aarMbaar1 || '-', s.aar2 || '-', sum
                     ]);
                 });
                 rows.push([]);
@@ -696,14 +716,14 @@
             sheetData.push(['LAPORAN KELENGKAPAN TOKO NPI 2026 (39 TOKO TARGET)']);
             sheetData.push(['Tanggal Cetak:', new Date().toLocaleString('id-ID')]);
             sheetData.push([]);
-            sheetData.push(['RINGKASAN KPI']);
-            sheetData.push(['Total Toko Target', 'Sudah Lengkap', 'Belum Lengkap', '% Kelengkapan']);
-            sheetData.push([storeList.length, success.length, danger.length, ((success.length / storeList.length) * 100).toFixed(2) + '%']);
+            sheetData.push(['RINGKASAN STATUS PENGISIAN']);
+            sheetData.push(['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']);
+            sheetData.push([storeList.length, success.length, danger.length, neutral.length]);
             sheetData.push([]);
 
-            sheetData = sheetData.concat(makeRows('KELOMPOK 1: TOKO SUDAH LENGKAP (' + success.length + ' Toko)', success));
-            sheetData = sheetData.concat(makeRows('KELOMPOK 2: TOKO BELUM LENGKAP (' + danger.length + ' Toko)', danger));
-            sheetData = sheetData.concat(makeRows('KELOMPOK 3: TOKO DALAM PROSES / BELUM ADA DATA (' + neutral.length + ' Toko)', neutral));
+            sheetData = sheetData.concat(makeRows('KELOMPOK 1: SUDAH MENGISI SEMUA (' + success.length + ' Toko)', success));
+            sheetData = sheetData.concat(makeRows('KELOMPOK 2: MENGISI BEBERAPA SAJA (' + danger.length + ' Toko)', danger));
+            sheetData = sheetData.concat(makeRows('KELOMPOK 3: BELUM MENGISI SEMUA (' + neutral.length + ' Toko)', neutral));
 
             let ws = XLSX.utils.aoa_to_sheet(sheetData);
             ws['!cols'] = [
@@ -712,7 +732,7 @@
                 { wch: 12 }, { wch: 18 }
             ];
 
-            XLSX.utils.book_append_sheet(wb, ws, "Detail 39 Toko");
+            XLSX.utils.book_append_sheet(wb, ws, "Pengelompokan 39 Toko");
             XLSX.writeFile(wb, "Laporan_Kelengkapan_39_Toko_NPI_2026.xlsx");
         }
 
@@ -733,8 +753,8 @@
 
             doc.autoTable({
                 startY: 26,
-                head: [['Total Toko Target', 'Sudah Lengkap', 'Belum Lengkap', '% Kelengkapan']],
-                body: [[storeList.length, success.length, danger.length, ((success.length / storeList.length) * 100).toFixed(2) + '%']],
+                head: [['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']],
+                body: [[storeList.length, success.length, danger.length, neutral.length]],
                 theme: 'grid',
                 headStyles: { fillColor: [15, 23, 42], textColor: 255, fontStyle: 'bold' },
                 styles: { fontSize: 9, halign: 'center' },
@@ -751,11 +771,15 @@
                 doc.text(title, 14, currentY);
                 currentY += 4;
 
-                let tableRows = list.map(s => [
-                    s.no, s.nama, s.iphone1 || '-', s.iphoneAcrylic || '-', s.iphoneRiser || '-',
-                    s.watch1 || '-', s.watch2 || '-', s.macAdhesive || '-', s.appApr || '-',
-                    s.aarMbaar1 || '-', s.aar2 || '-', s.summary || '-'
-                ]);
+                let tableRows = list.map(s => {
+                    let cat = getStoreCategory(s);
+                    let sum = s.summary && s.summary !== '-' ? s.summary : (cat === 'success' ? 'Sudah Terima' : '-');
+                    return [
+                        s.no, s.nama, s.iphone1 || '-', s.iphoneAcrylic || '-', s.iphoneRiser || '-',
+                        s.watch1 || '-', s.watch2 || '-', s.macAdhesive || '-', s.appApr || '-',
+                        s.aarMbaar1 || '-', s.aar2 || '-', sum
+                    ];
+                });
 
                 doc.autoTable({
                     startY: currentY,
@@ -771,9 +795,9 @@
                 currentY = doc.lastAutoTable.finalY + 8;
             }
 
-            addPdfGroup(`Kelompok 1: Toko Sudah Lengkap (${success.length} Toko)`, success, [5, 150, 105]);
-            addPdfGroup(`Kelompok 2: Toko Belum Lengkap (${danger.length} Toko)`, danger, [225, 29, 72]);
-            addPdfGroup(`Kelompok 3: Toko Dalam Proses / Belum Ada Data (${neutral.length} Toko)`, neutral, [71, 85, 105]);
+            addPdfGroup(`Kelompok 1: Sudah Mengisi Semua (${success.length} Toko)`, success, [5, 150, 105]);
+            addPdfGroup(`Kelompok 2: Mengisi Beberapa Saja (${danger.length} Toko)`, danger, [225, 29, 72]);
+            addPdfGroup(`Kelompok 3: Belum Mengisi Semua (${neutral.length} Toko)`, neutral, [71, 85, 105]);
 
             let pageCount = doc.internal.getNumberOfPages();
             for (let i = 1; i <= pageCount; i++) {
@@ -793,15 +817,12 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.stores && data.stores.length > 0) {
-                        // Filter out duplicate stores if Web App still returns 41
                         let fetched = data.stores;
                         let uniqueFetched = fetched.filter((s, idx) => {
-                            // Exclude index 36 & 37 if length is 41
                             if (fetched.length >= 41 && (idx === 36 || idx === 37)) return false;
                             return true;
                         });
 
-                        // Re-index store numbers 1 to N
                         uniqueFetched.forEach((s, i) => s.no = String(i + 1));
                         storeList = uniqueFetched;
 
