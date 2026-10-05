@@ -425,7 +425,7 @@
         <!-- Stat Cards -->
         <div class="stats-grid">
             <div class="stat-card blue">
-                <div class="stat-label">Total Toko Target</div>
+                <div class="stat-label">Total Toko Area Timur</div>
                 <div class="stat-value" id="statTotal">39</div>
                 <div class="stat-desc">Daftar toko unik tanpa duplikasi</div>
             </div>
@@ -769,7 +769,7 @@
             sheetData.push(['Tanggal Cetak:', new Date().toLocaleString('id-ID')]);
             sheetData.push([]);
             sheetData.push(['RINGKASAN STATUS PENGISIAN']);
-            sheetData.push(['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']);
+            sheetData.push(['Total Toko Area Timur', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']);
             sheetData.push([masterStoreData.length, success.length, danger.length, neutral.length]);
             sheetData.push([]);
 
@@ -805,7 +805,7 @@
 
             doc.autoTable({
                 startY: 26,
-                head: [['Total Toko Target', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']],
+                head: [['Total Toko Area Timur', 'Sudah Mengisi Semua', 'Mengisi Beberapa Saja', 'Belum Mengisi Semua']],
                 body: [[masterStoreData.length, success.length, danger.length, neutral.length]],
                 theme: 'grid',
                 headStyles: { fillColor: [15, 23, 42], textColor: 255, fontStyle: 'bold' },
