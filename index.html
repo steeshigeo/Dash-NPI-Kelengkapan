@@ -15,6 +15,58 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
 
     <style>
+        /* Dark Theme Variables Override */
+        [data-theme="dark"] {
+            --primary-dark: #020617;
+            --primary-accent: #3b82f6;
+            --bg-main: #0f172a;
+            --card-bg: #1e293b;
+            --text-dark: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-light: #334155;
+            
+            --success-color: #34d399;
+            --success-bg: rgba(5, 150, 105, 0.22);
+            --success-border: rgba(52, 211, 153, 0.35);
+            
+            --danger-color: #fb7185;
+            --danger-bg: rgba(225, 29, 72, 0.22);
+            --danger-border: rgba(251, 113, 133, 0.35);
+            
+            --info-color: #38bdf8;
+            --info-bg: rgba(2, 132, 199, 0.22);
+            
+            --neutral-bg: #334155;
+            --neutral-text: #cbd5e1;
+        }
+
+        /* Default System Theme (if data-theme is 'auto') */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]):not([data-theme="dark"]) {
+                --primary-dark: #020617;
+                --primary-accent: #3b82f6;
+                --bg-main: #0f172a;
+                --card-bg: #1e293b;
+                --text-dark: #f8fafc;
+                --text-muted: #94a3b8;
+                --border-light: #334155;
+                
+                --success-color: #34d399;
+                --success-bg: rgba(5, 150, 105, 0.22);
+                --success-border: rgba(52, 211, 153, 0.35);
+                
+                --danger-color: #fb7185;
+                --danger-bg: rgba(225, 29, 72, 0.22);
+                --danger-border: rgba(251, 113, 133, 0.35);
+                
+                --info-color: #38bdf8;
+                --info-bg: rgba(2, 132, 199, 0.22);
+                
+                --neutral-bg: #334155;
+                --neutral-text: #cbd5e1;
+            }
+        }
+
         :root {
             --primary-dark: #0f172a;
             --primary-accent: #2563eb;
@@ -51,6 +103,7 @@
             color: var(--text-dark);
             padding: 24px;
             line-height: 1.5;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
         .app-container {
@@ -213,13 +266,14 @@
             border-radius: 10px;
             border: 1px solid var(--border-light);
             font-size: 13.5px;
-            background: #f8fafc;
+            background: var(--bg-main);
+            color: var(--text-dark);
             outline: none;
             transition: all 0.2s;
         }
 
         .search-field input:focus {
-            background: #ffffff;
+            background: var(--card-bg);
             border-color: var(--primary-accent);
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }
@@ -255,11 +309,18 @@
         }
 
         .btn-refresh {
-            background: #f1f5f9;
+            background: var(--neutral-bg);
             color: var(--text-dark);
             border: 1px solid var(--border-light);
         }
-        .btn-refresh:hover { background: #e2e8f0; }
+        .btn-refresh:hover { background: var(--border-light); }
+
+        .btn-theme {
+            background: var(--neutral-bg);
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+        }
+        .btn-theme:hover { background: var(--border-light); }
 
         .btn-xlsx {
             background: #059669;
@@ -324,7 +385,8 @@
         }
 
         .section-badge {
-            background: rgba(255, 255, 255, 0.9);
+            background: var(--card-bg);
+            color: var(--text-dark);
             padding: 3px 12px;
             border-radius: 20px;
             font-size: 12px;
@@ -350,8 +412,8 @@
         }
 
         th {
-            background: #f8fafc;
-            color: #475569;
+            background: var(--neutral-bg);
+            color: var(--text-muted);
             font-weight: 700;
             text-transform: uppercase;
             font-size: 11px;
@@ -374,7 +436,7 @@
         }
 
         tbody tr:hover {
-            background-color: #f8fafc;
+            background-color: var(--neutral-bg);
         }
 
         /* Modern Status Badges */
@@ -391,8 +453,8 @@
         .pill-success { background: var(--success-bg); color: var(--success-color); border: 1px solid var(--success-border); }
         .pill-danger { background: var(--danger-bg); color: var(--danger-color); border: 1px solid var(--danger-border); }
         .pill-info { background: var(--info-bg); color: var(--info-color); }
-        .pill-neutral { background: #f1f5f9; color: #64748b; font-weight: 500; }
-        .pill-empty { color: #cbd5e1; }
+        .pill-neutral { background: var(--neutral-bg); color: var(--text-muted); font-weight: 500; }
+        .pill-empty { color: var(--text-muted); opacity: 0.5; }
 
         footer {
             margin-top: 36px;
@@ -441,7 +503,7 @@
             </div>
             <div class="stat-card gray">
                 <div class="stat-label">Belum Mengisi Semua</div>
-                <div class="stat-value" style="color: #475569;" id="statEmpty">0</div>
+                <div class="stat-value" style="color: #64748b;" id="statEmpty">0</div>
                 <div class="stat-desc">Belum Ada Data / Dalam Proses</div>
             </div>
         </div>
@@ -453,6 +515,9 @@
                 <input type="text" id="searchInput" placeholder="Cari nama toko..." onkeyup="filterAllTables()">
             </div>
             <div class="action-btns">
+                <button class="btn btn-theme" onclick="toggleTheme()" title="Ganti Tampilan Light / Dark Mode">
+                    <span id="themeBtnText">💻 Auto</span>
+                </button>
                 <button class="btn btn-refresh" onclick="loadDataFromWebApp()">
                     🔄 Sync Data
                 </button>
@@ -465,11 +530,11 @@
             </div>
         </div>
 
-        <!-- Category 1: Sudah Mengisi Semua -->
+        <!-- LIST TOKO 1 -->
         <div class="section-group" id="secSuccess">
             <div class="section-header success">
                 <div class="section-title">
-                    <span>✅ Kelompok 1: Sudah Mengisi Semua (Sudah Lengkap / Sudah Terima)</span>
+                    <span>✅ LIST TOKO 1: Sudah Mengisi Semua (Sudah Lengkap / Sudah Terima)</span>
                 </div>
                 <span class="section-badge" id="badgeSuccess">0 Toko</span>
             </div>
@@ -496,11 +561,11 @@
             </div>
         </div>
 
-        <!-- Category 2: Mengisi Beberapa Saja -->
+        <!-- LIST TOKO 2 -->
         <div class="section-group" id="secDanger">
             <div class="section-header danger">
                 <div class="section-title">
-                    <span>⚠️ Kelompok 2: Mengisi Beberapa Saja (Belum Lengkap)</span>
+                    <span>⚠️ LIST TOKO 2: Mengisi Beberapa Saja (Belum Lengkap)</span>
                 </div>
                 <span class="section-badge" id="badgeDanger">0 Toko</span>
             </div>
@@ -527,11 +592,11 @@
             </div>
         </div>
 
-        <!-- Category 3: Belum Mengisi Semua -->
+        <!-- LIST TOKO 3 -->
         <div class="section-group" id="secNeutral">
             <div class="section-header neutral">
                 <div class="section-title">
-                    <span>⏳ Kelompok 3: Belum Mengisi Semua (Belum Ada Data)</span>
+                    <span>⏳ LIST TOKO 3: Belum Mengisi Semua (Belum Ada Data)</span>
                 </div>
                 <span class="section-badge" id="badgeNeutral">0 Toko</span>
             </div>
@@ -566,7 +631,7 @@
     <script>
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxFdcbdAjPUSt1ilmxhZHE2DS4lLXeoXZpyJGDWx1o2xI4ybP_7-tjAQ145mhwBzfNTkA/exec";
 
-        // Master 39 Target Stores Definition (Locked to exactly these 39 stores in exact order)
+        // Master 39 Target Stores Definition
         const MASTER_39_STORES = [{"code": "M116", "nama": "M116 Digimap Beachwalk Bali"}, {"code": "M121", "nama": "M121 Digimap Tunjungan Plaza 3 Surabaya"}, {"code": "M122", "nama": "M122 Digimap Galaxy Mall Surabaya"}, {"code": "M123", "nama": "M123 Digimap Mall Bali Galeria"}, {"code": "M126", "nama": "M126 Digimap Ciputra World Surabaya"}, {"code": "M130", "nama": "M130 Digimap Sunset Road Bali"}, {"code": "M206", "nama": "M206 Digimap Pakuwon Mall Surabaya"}, {"code": "M216", "nama": "M216 Digimap Tentrem Mall Semarang"}, {"code": "M220", "nama": "M220 Digimap Malioboro Mall"}, {"code": "M223", "nama": "M223 Digimap Roxy Square Jember"}, {"code": "M226", "nama": "M226 Digimap Ambon City Center"}, {"code": "M229", "nama": "M229 Digimap Trans Icon Surabaya"}, {"code": "M230", "nama": "M230 Digimap The Park Kendari"}, {"code": "M231", "nama": "M231 Digimap Gress Mall Gresik"}, {"code": "M232", "nama": "M232 Digimap Pakuwon Mall Solo"}, {"code": "M233", "nama": "M233 Digimap Unimas District Sidoarjo"}, {"code": "M236", "nama": "M236 Digimap Palu Grand Mall"}, {"code": "M237", "nama": "M237 Digimap Solo Square"}, {"code": "M239", "nama": "M239 Digimap Icon Mall Bali"}, {"code": "M244", "nama": "M244 Digimap Java Mall Semarang"}, {"code": "M246", "nama": "M246 Digimap Malang Town Square"}, {"code": "M248", "nama": "M248 Digimap Suncity Mall Sidoarjo"}, {"code": "M250", "nama": "M250 Digimap Lippo Plaza Batu"}, {"code": "M253", "nama": "M253 Digimap Plaza Surabaya"}, {"code": "M258", "nama": "M258 Digimap Lippo Plaza Manado"}, {"code": "M260", "nama": "M260 Digimap Kudus Extention Mall"}, {"code": "M265", "nama": "M265 Digimap Merr Street"}, {"code": "M268", "nama": "M268 Digimap Diana Mall Timika"}, {"code": "M277", "nama": "M277 Digimap Citimall Tuban"}, {"code": "M281", "nama": "M281 Digimap Ngaliyan Street"}, {"code": "M283", "nama": "M283 Digimap Basuki Rahmat Tulungagung"}, {"code": "M285", "nama": "M285 Digimap Blitar Square"}, {"code": "M240", "nama": "M240 Digimap Pacific Mall Tegal"}, {"code": "M278", "nama": "M278 Digimap A.S.S Brebes"}, {"code": "M288", "nama": "M288 Digimap Mojopahit Street Mojokerto"}, {"code": "M289", "nama": "M289 Digimap Maleo Town Square"}, {"code": "M293", "nama": "M293 Digimap Jend Sudirman Salatiga"}, {"code": "M294", "nama": "M294 Digimap Bojonegoro Street"}, {"code": "M297", "nama": "M297 Digimap Ponorogo City Center"}];
 
         // Initial Dataset
@@ -604,26 +669,23 @@
                                      });
 
             if (hasBelum) {
-                return 'danger'; // Mengisi Beberapa Saja (Belum Lengkap)
+                return 'danger';
             } else if (hasLengkapOrTerima) {
-                return 'success'; // Sudah Mengisi Semua (Sudah Lengkap / Sudah Terima)
+                return 'success';
             } else {
-                return 'neutral'; // Belum Mengisi Semua (Belum Ada Data)
+                return 'neutral';
             }
         }
 
-        // Helper to extract store code (e.g. M116, M121) from any string
         function extractStoreCode(str) {
             if (!str) return '';
             let m = str.toString().match(/(M\d+)/i);
             return m ? m[1].toUpperCase() : '';
         }
 
-        // Process and map incoming raw array from Apps Script onto the Master 39 List
         function mergeIncomingData(incomingArray) {
             if (!Array.isArray(incomingArray) || incomingArray.length === 0) return;
 
-            // Map incoming items by store code Mxxx
             let incomingMap = {};
             incomingArray.forEach(item => {
                 let name = item.nama || item["Nama Toko"] || item["namaToko"] || item.Nama || item.store || '';
@@ -644,7 +706,6 @@
                 }
             });
 
-            // Update master dataset (preserving the 39 exact stores order)
             masterStoreData.forEach(store => {
                 let fresh = incomingMap[store.code];
                 if (fresh) {
@@ -701,19 +762,18 @@
             tbody.innerHTML = '';
 
             if (list.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:#94a3b8; padding:20px;">Tidak ada data toko dalam kelompok ini</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="12" style="text-align:center; color:#94a3b8; padding:20px;">Tidak ada data toko dalam list ini</td></tr>`;
                 return;
             }
 
-            // Numbering is sequential 1..N inside EACH capsule/table
             list.forEach((s, idx) => {
                 let cat = getStoreCategory(s);
                 let summaryDisplay = s.summary && s.summary !== '-' ? s.summary : (cat === 'success' ? 'Sudah Terima' : '-');
 
                 let tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td style="font-weight:700; color:#64748b;">${idx + 1}</td>
-                    <td style="font-weight:600; color:#0f172a;">${s.nama}</td>
+                    <td style="font-weight:700; color:var(--text-muted);">${idx + 1}</td>
+                    <td style="font-weight:600; color:var(--text-dark);">${s.nama}</td>
                     <td>${formatPill(s.iphone1)}</td>
                     <td>${formatPill(s.iphoneAcrylic)}</td>
                     <td>${formatPill(s.iphoneRiser)}</td>
@@ -773,9 +833,9 @@
             sheetData.push([masterStoreData.length, success.length, danger.length, neutral.length]);
             sheetData.push([]);
 
-            sheetData = sheetData.concat(makeRows('KELOMPOK 1: SUDAH MENGISI SEMUA (' + success.length + ' Toko)', success));
-            sheetData = sheetData.concat(makeRows('KELOMPOK 2: MENGISI BEBERAPA SAJA (' + danger.length + ' Toko)', danger));
-            sheetData = sheetData.concat(makeRows('KELOMPOK 3: BELUM MENGISI SEMUA (' + neutral.length + ' Toko)', neutral));
+            sheetData = sheetData.concat(makeRows('LIST TOKO 1: SUDAH MENGISI SEMUA (' + success.length + ' Toko)', success));
+            sheetData = sheetData.concat(makeRows('LIST TOKO 2: MENGISI BEBERAPA SAJA (' + danger.length + ' Toko)', danger));
+            sheetData = sheetData.concat(makeRows('LIST TOKO 3: BELUM MENGISI SEMUA (' + neutral.length + ' Toko)', neutral));
 
             let ws = XLSX.utils.aoa_to_sheet(sheetData);
             ws['!cols'] = [
@@ -847,9 +907,9 @@
                 currentY = doc.lastAutoTable.finalY + 8;
             }
 
-            addPdfGroup(`Kelompok 1: Sudah Mengisi Semua (${success.length} Toko)`, success, [5, 150, 105]);
-            addPdfGroup(`Kelompok 2: Mengisi Beberapa Saja (${danger.length} Toko)`, danger, [225, 29, 72]);
-            addPdfGroup(`Kelompok 3: Belum Mengisi Semua (${neutral.length} Toko)`, neutral, [71, 85, 105]);
+            addPdfGroup(`LIST TOKO 1: Sudah Mengisi Semua (${success.length} Toko)`, success, [5, 150, 105]);
+            addPdfGroup(`LIST TOKO 2: Mengisi Beberapa Saja (${danger.length} Toko)`, danger, [225, 29, 72]);
+            addPdfGroup(`LIST TOKO 3: Belum Mengisi Semua (${neutral.length} Toko)`, neutral, [71, 85, 105]);
 
             let pageCount = doc.internal.getNumberOfPages();
             for (let i = 1; i <= pageCount; i++) {
@@ -890,7 +950,50 @@
                 });
         }
 
+        // System / Light / Dark Theme Logic
+        function initTheme() {
+            let saved = localStorage.getItem('theme') || 'auto';
+            setTheme(saved);
+        }
+
+        function setTheme(mode) {
+            localStorage.setItem('theme', mode);
+            let root = document.documentElement;
+            let btnText = document.getElementById('themeBtnText');
+            
+            if (mode === 'light') {
+                root.setAttribute('data-theme', 'light');
+                if (btnText) btnText.innerHTML = '☀️ Light';
+            } else if (mode === 'dark') {
+                root.setAttribute('data-theme', 'dark');
+                if (btnText) btnText.innerHTML = '🌙 Dark';
+            } else {
+                root.removeAttribute('data-theme');
+                let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (btnText) btnText.innerHTML = isDark ? '💻 Auto (Dark)' : '💻 Auto (Light)';
+            }
+        }
+
+        function toggleTheme() {
+            let current = localStorage.getItem('theme') || 'auto';
+            if (current === 'auto') {
+                setTheme('light');
+            } else if (current === 'light') {
+                setTheme('dark');
+            } else {
+                setTheme('auto');
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            let saved = localStorage.getItem('theme') || 'auto';
+            if (saved === 'auto') {
+                setTheme('auto');
+            }
+        });
+
         window.onload = function() {
+            initTheme();
             renderAll();
             loadDataFromWebApp();
             setInterval(loadDataFromWebApp, 30000);
